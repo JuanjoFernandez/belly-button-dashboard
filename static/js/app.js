@@ -8,7 +8,7 @@
 d3.json("../data/samples.json").then((data) => {
     var idDropdown = d3.select("#selDataset");
     var idArray = data.names;
-    
+
     // Building the options
     idArray.forEach(element => {
         var row = idDropdown.append("option");
@@ -16,3 +16,12 @@ d3.json("../data/samples.json").then((data) => {
     });
 })
 
+// Update barchart with id selected
+function updateBarChart() {
+    var idSelected = d3.event.target.value;
+    console.log(idSelected);
+}
+
+// Event listener
+var idDropdown = d3.select("#selDataset");
+idDropdown.on("change", updateBarChart);

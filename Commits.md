@@ -3,4 +3,5 @@
 
 ## 07/01/2021 ##
 - Imports json file
-- Fills the dropdown with id's
+- Fills the dropdown with ids
+- Adds event listener for id selected
