@@ -10,3 +10,4 @@
 - Adds array for bar chart y values
 - Adds bar chart
 - Reverses the chart
+- Updates chart title

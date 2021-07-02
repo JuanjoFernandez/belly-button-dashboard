@@ -72,7 +72,7 @@ function updateBarChart() {
 
         // Plot layout and plotting
         var layout = {
-            title: "A gross title for a gross study",
+            title: `Bacteria found in test subject ${idSelected}`,
             xaxis: { title: "Sample Values" },
             yaxis: { title: "Id" }
         };
