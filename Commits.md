@@ -11,3 +11,4 @@
 - Adds bar chart
 - Reverses the chart
 - Updates chart title
+- Adds bubble chart
