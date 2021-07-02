@@ -20,6 +20,7 @@ d3.json("../data/samples.json").then((data) => {
 function updateBarChart() {
     // Grabbing the id to filter
     var idSelected = d3.event.target.value;
+    console.log (`id Selected: ${idSelected}`)
 
     // Working with the json
     d3.json("../data/samples.json").then((data) => {
@@ -32,7 +33,20 @@ function updateBarChart() {
             return sample.id === idSelected;
         }
         filteredSamples = filteredSamples.filter(filterSamples);
-        console.log(filteredSamples);        
+        console.log("Filtered data by id:")
+        console.log(filteredSamples);
+        
+        // Time to plot
+
+        // Plot area
+        var barArea = d3.select("#bar");
+
+        // Grabbing only the 10 most relevant bacterias, data is sorted accordingly
+        xValues = filteredSamples.map(item => item.sample_values);
+        xValues = xValues[0].slice(0, 10);
+        console.log("x values:");
+        console.log(xValues);
+        
     })
 }
 
