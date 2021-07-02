@@ -12,3 +12,6 @@
 - Reverses the chart
 - Updates chart title
 - Adds bubble chart
+
+## 07/02/2021 ##
+- Filters metadata

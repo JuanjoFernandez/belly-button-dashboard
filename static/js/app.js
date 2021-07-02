@@ -12,6 +12,7 @@ d3.json("../data/samples.json").then((data) => {
 
 // Update barchart with id selected
 function updateBarChart() {
+
     // Console prints the plot info, will clear the console when graphic updates
     console.clear();
 
@@ -21,7 +22,7 @@ function updateBarChart() {
 
     // Working with the json
     d3.json("../data/samples.json").then((data) => {
-
+        
         // Mapping the samples data
         var filteredSamples = data.samples.map(item => item);
 
@@ -91,7 +92,7 @@ function updateBarChart() {
         markBubble = markBubble[0];
         console.log("Sizes for bubbles:");
         console.log(markBubble);
-        
+
         // Marker color
         var colorBubble = filteredSamples.map(item => item.otu_ids);
         colorBubble = colorBubble[0];
@@ -103,7 +104,7 @@ function updateBarChart() {
         hoverBubble = hoverBubble[0];
         console.log("Hover text for bubbles:");
         console.log(hoverBubble);
-        
+
         // Bubble trace
         var traceBubble = {
             x: xBubble,
@@ -111,22 +112,33 @@ function updateBarChart() {
             mode: 'markers',
             text: hoverBubble,
             marker: {
-              color: colorBubble,
-            //   opacity: [1, 0.8, 0.6, 0.4],
-              size: markBubble,
+                color: colorBubble,
+                //   opacity: [1, 0.8, 0.6, 0.4],
+                size: markBubble,
             }
-          };
-          var dataBubble = [traceBubble];
+        };
+        var dataBubble = [traceBubble];
 
-          var layoutBubble = {
+        var layoutBubble = {
             title: 'Marker Size and Color',
             showlegend: false,
             // height: 600,
             // width: 600
-          };
-          
-          Plotly.newPlot("bubble", dataBubble, layoutBubble);
+        };
+
+        Plotly.newPlot("bubble", dataBubble, layoutBubble);
+
     })
+
+    // Working with metadata, using a new json to avoid variable duplication
+    d3.json("../data/samples.json").then((data) => {
+        var filteredMeta = data.metadata.map(item => item);
+        function filterMeta (sample) {
+            return String(sample.id) === String(idSelected);
+        }
+        filteredMeta = filteredMeta.filter(filterMeta);
+        console.log(filteredMeta);
+    })    
 }
 
 // Event listener
