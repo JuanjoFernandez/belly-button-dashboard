@@ -20,14 +20,14 @@ d3.json("../data/samples.json").then((data) => {
 function updateBarChart() {
     // Grabbing the id to filter
     var idSelected = d3.event.target.value;
-    console.log (`id Selected: ${idSelected}`)
+    console.log(`id Selected: ${idSelected}`)
 
     // Working with the json
     d3.json("../data/samples.json").then((data) => {
-        
+
         // Mapping the samples data
         var filteredSamples = data.samples.map(item => item);
-        
+
         // Filtering the data
         function filterSamples(sample) {
             return sample.id === idSelected;
@@ -35,23 +35,46 @@ function updateBarChart() {
         filteredSamples = filteredSamples.filter(filterSamples);
         console.log("Filtered data by id:")
         console.log(filteredSamples);
-        
+
         // Time to plot
 
-        // Plot area
-        var barArea = d3.select("#bar");
-
         // Grabbing only the 10 most relevant bacterias, data is sorted accordingly
-        xValues = filteredSamples.map(item => item.sample_values);
+        var xValues = filteredSamples.map(item => item.sample_values);
         xValues = xValues[0].slice(0, 10);
         console.log("x values:");
         console.log(xValues);
 
-        yValues = filteredSamples.map(item=>item.otu_ids);
-        yValues = yValues[0].slice(0,10);
+        var yValues = filteredSamples.map(item => item.otu_ids);
+        yValues = yValues[0].slice(0, 10);
+        yValues = yValues.map(i => "OTU " + i);
         console.log("y values:");
         console.log(yValues);
-        
+
+        var hoverText = filteredSamples.map(item=>item.otu_labels);
+        hoverText = hoverText[0].slice(0,10);
+        console.log("Hover text:");
+        console.log(hoverText);
+
+        // Trace and data array
+        var trace = {
+            x: xValues,
+            y: yValues,
+            type: "bar",
+            orientation: "h",
+            text: hoverText
+        };
+        var data = [trace];
+
+        // Plot layout and plotting
+        var layout = {
+            title: "A gross title for a gross study",
+            xaxis: { title: "Sample Values" },
+            yaxis: { title: "Id" }
+        };
+
+        Plotly.newPlot("bar", data, layout);
+
+
     })
 }
 
