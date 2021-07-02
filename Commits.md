@@ -7,3 +7,4 @@
 - Adds event listener for id selected
 - Adds filtering function
 - Adds array for bar chart x values
+- Adds array for bar chart y values

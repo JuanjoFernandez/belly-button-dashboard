@@ -46,6 +46,11 @@ function updateBarChart() {
         xValues = xValues[0].slice(0, 10);
         console.log("x values:");
         console.log(xValues);
+
+        yValues = filteredSamples.map(item=>item.otu_ids);
+        yValues = yValues[0].slice(0,10);
+        console.log("y values:");
+        console.log(yValues);
         
     })
 }
