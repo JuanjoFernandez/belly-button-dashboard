@@ -5,3 +5,4 @@
 - Imports json file
 - Fills the dropdown with ids
 - Adds event listener for id selected
+- Adds filtering function

@@ -18,8 +18,22 @@ d3.json("../data/samples.json").then((data) => {
 
 // Update barchart with id selected
 function updateBarChart() {
+    // Grabbing the id to filter
     var idSelected = d3.event.target.value;
-    console.log(idSelected);
+
+    // Working with the json
+    d3.json("../data/samples.json").then((data) => {
+        
+        // Mapping the samples data
+        var filteredSamples = data.samples.map(item => item);
+        
+        // Filtering the data
+        function filterSamples(sample) {
+            return sample.id === idSelected;
+        }
+        filteredSamples = filteredSamples.filter(filterSamples);
+        console.log(filteredSamples);        
+    })
 }
 
 // Event listener
