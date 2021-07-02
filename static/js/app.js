@@ -18,6 +18,9 @@ d3.json("../data/samples.json").then((data) => {
 
 // Update barchart with id selected
 function updateBarChart() {
+    // Console prints the plot info, will clear the console when graphic updates
+    console.clear();
+    
     // Grabbing the id to filter
     var idSelected = d3.event.target.value;
     console.log(`id Selected: ${idSelected}`)
@@ -41,12 +44,14 @@ function updateBarChart() {
         // Grabbing only the 10 most relevant bacterias, data is sorted accordingly
         var xValues = filteredSamples.map(item => item.sample_values);
         xValues = xValues[0].slice(0, 10);
+        xValues = xValues.reverse()
         console.log("x values:");
         console.log(xValues);
 
         var yValues = filteredSamples.map(item => item.otu_ids);
         yValues = yValues[0].slice(0, 10);
         yValues = yValues.map(i => "OTU " + i);
+        yValues = yValues.reverse()
         console.log("y values:");
         console.log(yValues);
 
