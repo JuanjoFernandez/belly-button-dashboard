@@ -3,3 +3,4 @@
 
 ## 07/01/2021 ##
 - Imports json file
+- Fills the dropdown with id's
