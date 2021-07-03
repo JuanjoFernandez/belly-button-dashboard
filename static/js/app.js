@@ -22,7 +22,7 @@ function updateBarChart() {
 
     // Working with the json
     d3.json("../data/samples.json").then((data) => {
-        
+
         // Mapping the samples data
         var filteredSamples = data.samples.map(item => item);
 
@@ -133,14 +133,14 @@ function updateBarChart() {
     // Working with metadata, using a new json to avoid variable duplication
     d3.json("../data/samples.json").then((data) => {
         var filteredMeta = data.metadata.map(item => item);
-        function filterMeta (sample) {
+        function filterMeta(sample) {
             return String(sample.id) === String(idSelected);
         }
         filteredMeta = filteredMeta.filter(filterMeta);
         filteredMeta = filteredMeta[0];
-        console.log ("Id metadata:");
+        console.log("Id metadata:");
         console.log(filteredMeta);
-        
+
         // Pulling keys array
         keyArray = Object.keys(filteredMeta);
 
@@ -149,38 +149,34 @@ function updateBarChart() {
 
         var metaText = d3.select("#sample-metadata");
         metaText.html("");
-        for (var i = 0; i < keyArray.length; i++){
+        for (var i = 0; i < keyArray.length; i++) {
             var row = metaText.append("h4");
             row.text(`${keyArray[i]}: ${valuesArray[i]}`);
         }
-        
+
         // Gauge chart code
         var data = [
             {
                 domain: { x: [0, 1], y: [0, 1] },
-                value: 450,
-                title: { text: "Speed" },
+                value: valuesArray[6],
+                title: { text: "Weekly scrubs" },
                 type: "indicator",
                 mode: "gauge+number+delta",
-                delta: { reference: 380 },
+                delta: { reference: 6 },
                 gauge: {
-                    axis: { range: [null, 500] },
+                    axis: { range: [null, 9], tick0: 0, dtick: 1},
                     steps: [
-                        { range: [0, 250], color: "lightgray" },
-                        { range: [250, 400], color: "gray" }
+                        { range: [0, 3], color: "red" },
+                        { range: [3, 6], color: "yellow" },
+                        { range: [6, 9], color: "green" }
                     ],
-                    threshold: {
-                        line: { color: "red", width: 4 },
-                        thickness: 0.75,
-                        value: 490
-                    }
                 }
             }
         ];
-    
+
         var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
         Plotly.newPlot('gauge', data, layout);
-    })    
+    })
 }
 
 // Event listener

@@ -19,3 +19,4 @@
 - Displays id metadata in index.html
 - Clears metadata frame on updating
 - Adds gauge chart
+- Customizes gauge chart for the dataset
