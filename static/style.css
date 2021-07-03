@@ -1,3 +1,8 @@
 h4 {
     font-size: 12px;
 }
+
+.panel-primary>.panel-heading {
+    background-color: #4a685b;
+    border-color: #4a685b;
+}

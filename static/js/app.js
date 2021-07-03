@@ -61,7 +61,15 @@ function updateBarChart() {
             y: yValues,
             type: "bar",
             orientation: "h",
-            text: hoverText
+            text: hoverText,
+            marker: {
+                color: '#6da78f',
+                opacity: 0.6,
+                line: {
+                  color: '#2a4238',
+                  width: 1.5
+                }
+            }
         };
         var data = [trace];
 
@@ -174,7 +182,7 @@ function updateBarChart() {
             }
         ];
 
-        var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+        var layout = { margin: { t: 0, b: 0 } };
         Plotly.newPlot('gauge', data, layout);
     })
 }

@@ -21,3 +21,4 @@
 - Adds gauge chart
 - Customizes gauge chart for the dataset
 - Adds general color scheme
+- Formats html page
