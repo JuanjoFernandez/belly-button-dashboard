@@ -178,6 +178,7 @@ function updateBarChart() {
                         { range: [3, 6], color: "yellow" },
                         { range: [6, 9], color: "green" }
                     ],
+                    bar: { color: "grey" }
                 }
             }
         ];

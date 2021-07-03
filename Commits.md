@@ -34,3 +34,4 @@
 ## *07/03/2021* ##
 - Adds samples.json script to html
 - Changes data path
+- Changes gauge bar color
