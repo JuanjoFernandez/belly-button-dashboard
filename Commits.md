@@ -20,3 +20,4 @@
 - Clears metadata frame on updating
 - Adds gauge chart
 - Customizes gauge chart for the dataset
+- Adds general color scheme
