@@ -147,10 +147,8 @@ function updateBarChart() {
         // Pulling values array
         valuesArray = Object.values(filteredMeta);
 
-        console.log(keyArray);
-        console.log(valuesArray);
-
         var metaText = d3.select("#sample-metadata");
+        metaText.html("");
         for (var i = 0; i < keyArray.length; i++){
             var row = metaText.append("h4");
             row.text(`${keyArray[i]}: ${valuesArray[i]}`);

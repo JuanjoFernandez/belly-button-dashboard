@@ -17,3 +17,4 @@
 - Filters metadata
 - Creates arrays for key, value pair
 - Displays id metadata in index.html
+- Clears metadata frame on updating
