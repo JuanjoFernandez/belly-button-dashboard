@@ -15,3 +15,4 @@
 
 ## 07/02/2021 ##
 - Filters metadata
+- Creates arrays for key, value pair

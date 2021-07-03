@@ -137,7 +137,23 @@ function updateBarChart() {
             return String(sample.id) === String(idSelected);
         }
         filteredMeta = filteredMeta.filter(filterMeta);
+        filteredMeta = filteredMeta[0];
+        console.log ("Id metadata:");
         console.log(filteredMeta);
+        
+        // Pulling keys array
+        keyArray = Object.keys(filteredMeta);
+
+        // Pulling values array
+        valuesArray = Object.values(filteredMeta);
+
+        console.log(keyArray);
+        console.log(valuesArray);
+
+        for (var i = 0; i < keyArray.length; i++){
+            var metaText = d3.select("sample-metadata")
+        }
+        
     })    
 }
 
