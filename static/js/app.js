@@ -150,8 +150,10 @@ function updateBarChart() {
         console.log(keyArray);
         console.log(valuesArray);
 
+        var metaText = d3.select("#sample-metadata");
         for (var i = 0; i < keyArray.length; i++){
-            var metaText = d3.select("sample-metadata")
+            var row = metaText.append("h4");
+            row.text(`${keyArray[i]}: ${valuesArray[i]}`);
         }
         
     })    
