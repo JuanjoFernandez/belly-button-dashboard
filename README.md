@@ -1,4 +1,8 @@
-# belly-button-dashboard
+![header](resources/belly_button.jpg)
+
+# Belly-button dashboard
+
+## [https://juanjofernandez.github.io/belly-button-dashboard/](https://juanjofernandez.github.io/belly-button-dashboard/) ##
 
 ## Project Overview ##
  - This Data Analysis project consists in creating a visualization dashboard with the data provided; the provided data consists of a json file containing the bacteria observed in the belly button of anonymous subjects
@@ -12,6 +16,7 @@
  - The bubble chart displays all the bacterias found on the subject since this graph allows us to look at a large number of categories with ease
  - Finally, the gauge chart displays how often the subject cleaned his/her belly button in order to visually determine the existence of a correlation
  - The color of the gauge chart are randomly selected since I could not found any information of a healthy cleaning habit
+ 
 
  ## Repository structure
  ````bash
@@ -36,3 +41,8 @@
             app.js
             bonus.js
  ````
+
+ ## App screenshot ##
+
+![ScreenshotBig](resources/screenshotBig.jpg)
+![ScreenshotSmall](resources/screenshotSmall.jpg)
