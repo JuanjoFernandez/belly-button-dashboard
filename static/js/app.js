@@ -1,5 +1,5 @@
 // Reading the json and building the id options
-d3.json("../../data/samples.json").then((data) => {
+d3.json("data/samples.json").then((data) => {
     var idDropdown = d3.select("#selDataset");
     var idArray = data.names;
 
@@ -21,7 +21,7 @@ function updateBarChart() {
     console.log(`id Selected: ${idSelected}`)
 
     // Working with the json
-    d3.json("../../data/samples.json").then((data) => {
+    d3.json("data/samples.json").then((data) => {
 
         // Mapping the samples data
         var filteredSamples = data.samples.map(item => item);
@@ -139,7 +139,7 @@ function updateBarChart() {
     })
 
     // Working with metadata, using a new json to avoid variable duplication
-    d3.json("../../data/samples.json").then((data) => {
+    d3.json("data/samples.json").then((data) => {
         var filteredMeta = data.metadata.map(item => item);
         function filterMeta(sample) {
             return String(sample.id) === String(idSelected);
