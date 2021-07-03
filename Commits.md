@@ -30,3 +30,6 @@
 - Updates readme
 - Adds header to md files
 - Fixes hover text for bubble chart
+
+## *07/03/2021* ##
+- Adds samples.json script to html
