@@ -108,7 +108,7 @@ function updateBarChart() {
         console.log(colorBubble);
 
         // Hover text
-        var hoverBubble = filteredSamples.map(item => item.otu_ids);
+        var hoverBubble = filteredSamples.map(item => item.otu_labels);
         hoverBubble = hoverBubble[0];
         console.log("Hover text for bubbles:");
         console.log(hoverBubble);

@@ -29,3 +29,4 @@
 - Formats html page
 - Updates readme
 - Adds header to md files
+- Fixes hover text for bubble chart
